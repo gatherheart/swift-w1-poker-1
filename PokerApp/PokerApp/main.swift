@@ -7,25 +7,19 @@
 //
 import Foundation
 
-let card: Card = try! Card(rank: 0, suit: Card.Suit.Joker)
-print(card)
+let numOfUser = 3
+
+do {
+    let poker: Poker = try Poker(type: Poker.GameType.five, numOfUser: numOfUser)
+    print(poker.dealer.cards)
+    for i in 0..<numOfUser {
+        print(poker.users[i].cards)
+    }
+    
+} catch {
+    print(error)
+}
 
 
-var d = Deck()
-print(d.cards)
-print(d.count)
 
-print()
-
-d.shuffle()
-print(d.cards)
-print(d.count)
-
-print(try! d.removeOne())
-print(d.cards)
-print(d.count)
-
-d.reset()
-print(d.cards)
-print(d.count)
 
