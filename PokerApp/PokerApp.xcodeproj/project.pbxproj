@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5D6F7BCB25A5A51000BCE98D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6F7BCA25A5A51000BCE98D /* main.swift */; };
 		5D6F7BD925A5A5E100BCE98D /* PokerAppCardTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6F7BD825A5A5E100BCE98D /* PokerAppCardTest.swift */; };
+		5D6F7C0C25A69BE800BCE98D /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6F7C0B25A69BE800BCE98D /* Card.swift */; };
+		5D6F7C0F25A69BFB00BCE98D /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6F7C0B25A69BE800BCE98D /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +31,7 @@
 		5D6F7BD625A5A5E100BCE98D /* PokerAppCardTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokerAppCardTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6F7BD825A5A5E100BCE98D /* PokerAppCardTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerAppCardTest.swift; sourceTree = "<group>"; };
 		5D6F7BDA25A5A5E100BCE98D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D6F7C0B25A69BE800BCE98D /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				5D6F7BCA25A5A51000BCE98D /* main.swift */,
+				5D6F7C0B25A69BE800BCE98D /* Card.swift */,
 			);
 			path = PokerApp;
 			sourceTree = "<group>";
@@ -173,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D6F7BCB25A5A51000BCE98D /* main.swift in Sources */,
+				5D6F7C0C25A69BE800BCE98D /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D6F7BD925A5A5E100BCE98D /* PokerAppCardTest.swift in Sources */,
+				5D6F7C0F25A69BFB00BCE98D /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
