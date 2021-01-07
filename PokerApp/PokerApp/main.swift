@@ -7,47 +7,9 @@
 
 import Foundation
 
-class Card : CustomStringConvertible {
-  
-    public enum Suit : String {
-        case Hearts = "♥️", Spades = "♠️", Diamonds = "💎", Clubs = "♣️"
-    }
+let card: Card = try! Card(rank: 13, suit: Card.Suit.Clubs)
+print(card)
 
-    enum ValidationError: Error {
-        case wrongRankRange
-    }
-    
-    var rank: Int
-    var suit: Suit
-    
-    public init(rank: Int, suit: Suit) throws {
-        guard 1...13 ~= rank else {
-            throw ValidationError.wrongRankRange
-        }
-        self.rank = rank
-        self.suit = suit
-    }
-    
-    private func convertRank() -> String {
-        switch self.rank {
-        case 1:
-            return "A"
-        case 11:
-            return "J"
-        case 12:
-            return "Q"
-        case 13:
-            return "K"
-        default:
-            return String(self.rank)
-        }
-    }
-    
-    var description: String {
-        return "\(self.suit.rawValue)\(self.convertRank())"
-    }
+func test () -> Bool{
+    return true
 }
-
-var c = try Card(rank: 10, suit: Card.Suit.Clubs)
-
-print(c)
