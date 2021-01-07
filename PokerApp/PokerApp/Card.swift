@@ -7,10 +7,13 @@
 import Foundation
 
 
-class Card : CustomStringConvertible {
-  
-    public enum Suit : String {
-        case Hearts = "♥️", Spades = "♠️", Diamonds = "💎", Clubs = "♣️"
+class Card : CustomStringConvertible, Equatable {
+    public static func == (lhs: Card, rhs: Card) -> Bool{
+        return lhs.description == rhs.description
+    }
+
+    public enum Suit : String, CaseIterable {
+        case Hearts = "♥️", Spades = "♠️", Diamonds = "💎", Clubs = "♣️", Joker = "🃏"
     }
 
     enum ValidationError: Error {
@@ -21,15 +24,17 @@ class Card : CustomStringConvertible {
     var suit: Suit
     
     public init(rank: Int, suit: Suit) throws {
-        guard 1...13 ~= rank else {
+        guard 0...13 ~= rank else {
             throw ValidationError.wrongRankRange
         }
-        self.rank = rank
         self.suit = suit
+        self.rank = suit == Card.Suit.Joker ? 0 : rank
     }
     
     private func convertRank() -> String {
         switch self.rank {
+        case 0:
+            return ""
         case 1:
             return "A"
         case 11:

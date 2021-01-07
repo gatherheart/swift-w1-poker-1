@@ -7,9 +7,25 @@
 //
 import Foundation
 
-let card: Card = try! Card(rank: 13, suit: Card.Suit.Clubs)
+let card: Card = try! Card(rank: 0, suit: Card.Suit.Joker)
 print(card)
 
-func test () -> Bool{
-    return true
-}
+
+var d = Deck()
+print(d.cards)
+print(d.count)
+
+print()
+
+d.shuffle()
+print(d.cards)
+print(d.count)
+
+print(try! d.removeOne())
+print(d.cards)
+print(d.count)
+
+d.reset()
+print(d.cards)
+print(d.count)
+
