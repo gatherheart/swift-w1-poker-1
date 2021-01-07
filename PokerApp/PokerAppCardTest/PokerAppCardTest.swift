@@ -15,14 +15,9 @@ class PokerAppCardTest: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
     
-    func test카드숫자범위_0부터13까지_확인() throws {
-        let randomInt = Int.random(in: 0...13)
+    func test카드숫자범위_확인() throws {
+        let randomInt = Int.random(in: 1...13)
         let card = try Card(rank: randomInt, suit: Card.Suit.Clubs)
         XCTAssertNotNil(card)
     }
