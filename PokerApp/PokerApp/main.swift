@@ -1,53 +1,25 @@
+
 //
 //  main.swift
 //  PokerApp
 //
 //  Created by bean Milky on 2021/01/06.
 //
-
 import Foundation
 
-class Card : CustomStringConvertible {
-  
-    public enum Suit : String {
-        case Hearts = "♥️", Spades = "♠️", Diamonds = "💎", Clubs = "♣️"
-    }
+let numOfUser = 3
 
-    enum ValidationError: Error {
-        case wrongRankRange
+do {
+    let poker: Poker = try Poker(type: Poker.GameType.five, numOfUser: numOfUser)
+    print(poker.dealer.cards)
+    for i in 0..<numOfUser {
+        print(poker.users[i].cards)
     }
     
-    var rank: Int
-    var suit: Suit
-    
-    public init(rank: Int, suit: Suit) throws {
-        guard 1...13 ~= rank else {
-            throw ValidationError.wrongRankRange
-        }
-        self.rank = rank
-        self.suit = suit
-    }
-    
-    private func convertRank() -> String {
-        switch self.rank {
-        case 1:
-            return "A"
-        case 11:
-            return "J"
-        case 12:
-            return "Q"
-        case 13:
-            return "K"
-        default:
-            return String(self.rank)
-        }
-    }
-    
-    var description: String {
-        return "\(self.suit.rawValue)\(self.convertRank())"
-    }
+} catch {
+    print(error)
 }
 
-var c = try Card(rank: 10, suit: Card.Suit.Clubs)
 
-print(c)
+
+
