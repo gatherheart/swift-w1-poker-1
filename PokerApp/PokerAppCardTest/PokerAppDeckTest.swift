@@ -17,17 +17,15 @@ class PokerAppDeckTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
     func test카드셔플_확인() throws {
         var deck = Deck()
         let originalDeck = deck
         deck.shuffle()
         // Deck이 struct일 때만 가능한 로직 -> class일 경우 다른 방식으로 해결해야 함
-        XCTAssertNotEqual(originalDeck.cards, deck.cards)
+        if originalDeck.cards != deck.cards {
+            XCTAssertEqual(originalDeck.cards.sorted {$0.description < $1.description}, deck.cards.sorted {$0.description < $1.description})
+        }
+        
         XCTAssertEqual(originalDeck.count, deck.count)
     }
     

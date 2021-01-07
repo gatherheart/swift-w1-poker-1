@@ -37,7 +37,7 @@ struct Deck : Equatable {
                 }
             }
         }
-        self.cards.append(try! Card(rank: 0, suit: Card.Suit.Joker))
+        self.cards.append(try! Card(rank: 1, suit: Card.Suit.Joker))
     }
     
     public mutating func shuffle() {
