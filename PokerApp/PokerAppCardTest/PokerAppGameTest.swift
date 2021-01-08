@@ -7,12 +7,6 @@
 
 import XCTest
 
-extension Array where Element: Comparable {
-    func containsSameElements(as other: [Element]) -> Bool {
-        return self.count == other.count && self.sorted() == other.sorted()
-    }
-}
-
 class PokerAppGameTest: XCTestCase {
 
     override func setUpWithError() throws {
@@ -26,17 +20,17 @@ class PokerAppGameTest: XCTestCase {
     func test포커게임생성() throws {
         
         let numOfUsers: [Int] = Array(1...4)
-        let gameTypes: [Poker.GameType] = [.five, .seven]
+        let gameTypes: [PokerPlay.GameType] = [.five, .seven]
         for gameType in gameTypes {
             for numOfUser in numOfUsers {
-                let poker: Poker = try Poker(type: gameType, numOfUser: numOfUser)
+                let poker: PokerPlay = try PokerPlay(type: gameType, numOfUser: numOfUser)
                 let originalNumOfCards = poker.initialNumOfCards
 
                 XCTAssertEqual(poker.dealer.cards.count, gameType.rawValue)
                 for i in 0..<numOfUser {
                     XCTAssertEqual(poker.users[i].cards.count, gameType.rawValue)
                 }
-                XCTAssertEqual(poker.deck.count, originalNumOfCards-(numOfUser+1)*gameType.rawValue)
+                XCTAssertEqual(poker.dealer.deck.count, originalNumOfCards-(numOfUser+1)*gameType.rawValue)
                 
                 for i in 0..<numOfUser-1 {
                     for j in i+1..<numOfUser {

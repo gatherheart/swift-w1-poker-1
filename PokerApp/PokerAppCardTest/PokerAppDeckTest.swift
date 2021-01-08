@@ -18,19 +18,18 @@ class PokerAppDeckTest: XCTestCase {
     }
 
     func test카드셔플_확인() throws {
-        var deck = Deck()
-        let originalDeck = deck
+        let deck = Deck()
+        let originalDeck = Deck()
         deck.shuffle()
-        // Deck이 struct일 때만 가능한 로직 -> class일 경우 다른 방식으로 해결해야 함
         if originalDeck.cards != deck.cards {
             XCTAssertEqual(originalDeck.cards.sorted {$0.description < $1.description}, deck.cards.sorted {$0.description < $1.description})
         }
         
-        XCTAssertEqual(originalDeck.count, deck.count)
+        XCTAssertEqual(originalDeck.cards.count, deck.count)
     }
     
     func test카드RemoveOne_확인() throws {
-        var deck = Deck()
+        let deck = Deck()
         let originalCount = deck.count
         let card = try deck.removeOne()
         XCTAssertNotNil(card)
@@ -38,7 +37,7 @@ class PokerAppDeckTest: XCTestCase {
     }
     
     func test카드Reset_확인() throws {
-        var deck = Deck()
+        let deck = Deck()
         let originalDeck = deck
         deck.reset()
         XCTAssertEqual(deck, originalDeck)

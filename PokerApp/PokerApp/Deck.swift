@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Deck : Equatable {
+class Deck : Equatable {
     
     static func == (lhs: Deck, rhs: Deck) -> Bool {
         return lhs.cards == rhs.cards
@@ -29,7 +29,7 @@ struct Deck : Equatable {
         self.refillCards()
     }
     
-    private mutating func refillCards() {
+    private func refillCards() {
         for rank in 1...13 {
             for suit in Card.Suit.allCases {
                 if suit != Card.Suit.Joker {
@@ -40,21 +40,21 @@ struct Deck : Equatable {
         self.cards.append(try! Card(rank: 1, suit: Card.Suit.Joker))
     }
     
-    public mutating func shuffle() {
+    public func shuffle() {
         for i in 0..<count-1 {
             let j = Int.random(in: i..<count)
             (self.cards[i], self.cards[j]) = (self.cards[j], self.cards[i])
         }
     }
     
-    public mutating func removeOne() throws -> Card {
+    public func removeOne() throws -> Card {
         guard count > 0 else {
             throw Deck.ValidationError.OutOfCardCapacity
         }
         return self.cards.remove(at: 0)
     }
     
-    public mutating func reset() {
+    public func reset() {
         self.cards = [Card]()
         self.refillCards()
     }

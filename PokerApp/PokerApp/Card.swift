@@ -7,17 +7,51 @@
 import Foundation
 
 
-class Card : CustomStringConvertible, Equatable {
+struct Card : CustomStringConvertible, Equatable, Comparable {
     public static func == (lhs: Card, rhs: Card) -> Bool{
-        return lhs.description == rhs.description
+        return lhs.rank == rhs.rank && lhs.suit == rhs.suit
     }
+    public static func < (lhs: Card, rhs: Card) -> Bool {
+        return (lhs.rank < rhs.rank) || (lhs.rank == rhs.rank && lhs.suit < rhs.suit)
+    }
+    
+    public enum Suit : String, CaseIterable, Equatable, Comparable {
+        public static func < (lhs: Suit, rhs: Suit) -> Bool {
+            return lhs.getScore() < rhs.getScore()
+        }
 
-    public enum Suit : String, CaseIterable {
+        public static func == (lhs: Suit, rhs: Suit) -> Bool {
+            return lhs.rawValue == rhs.rawValue
+        }
+        
+        public func getScore() -> Float {
+            switch self {
+            case .Hearts:
+                return 0.1
+            case .Clubs:
+                return 0.2
+            case .Diamonds:
+                return 0.3
+            case .Spades:
+                return 0.4
+            default:
+                return 0
+            }
+        }
+        
         case Hearts = "♥️", Spades = "♠️", Diamonds = "💎", Clubs = "♣️", Joker = "🃏"
     }
     
-    public enum Rank: Int, CaseIterable {
+    public enum Rank: Int, CaseIterable, Comparable {
         case One = 1, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, J, Q, K
+        
+        public static func < (lhs: Rank, rhs: Rank) -> Bool {
+            return lhs.rawValue < rhs.rawValue
+        }
+
+        public static func == (lhs: Rank, rhs: Rank) -> Bool {
+            return lhs.rawValue == rhs.rawValue
+        }
         
         public func convertRank() -> String {
             switch self.rawValue {
