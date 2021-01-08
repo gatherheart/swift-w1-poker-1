@@ -59,7 +59,7 @@ class PokerPlay: Poker {
             self.users[i].setScore(score: Poker.calculateScore(of: self.users[i]))
         }
         self.dealer.setScore(score: Poker.calculateScore(of: self.dealer))
-        if let winner: Playable = gamePlayer.max(by: {$0.score > $1.score}) {
+        if let winner: Playable = gamePlayer.max(by: {$0.score < $1.score}) {
             return winner
         }
         return nil

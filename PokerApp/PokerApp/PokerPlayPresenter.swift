@@ -21,6 +21,7 @@ class PokerPlayPresenter {
         for i in 0..<gamePlayer.count {
             print("\(gamePlayer[i].playerName) \(gamePlayer[i].cards) \(gamePlayer[i] == winner ? "= Winner" : "")")
         }
+        
     }
     
 }
