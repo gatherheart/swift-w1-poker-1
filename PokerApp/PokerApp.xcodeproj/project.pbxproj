@@ -20,6 +20,7 @@
 		5DAFA79A25A8177700F52BD3 /* PokerAppPokerRuleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAFA79925A8177700F52BD3 /* PokerAppPokerRuleTest.swift */; };
 		5DAFA79E25A8441300F52BD3 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAFA79D25A8441300F52BD3 /* Player.swift */; };
 		5DAFA7A125A8451000F52BD3 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAFA79D25A8441300F52BD3 /* Player.swift */; };
+		5DAFA7A525A88F2100F52BD3 /* PokerAppPlayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAFA7A425A88F2100F52BD3 /* PokerAppPlayTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +48,7 @@
 		5DAFA79025A711FD00F52BD3 /* PokerAppGameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokerAppGameTest.swift; sourceTree = "<group>"; };
 		5DAFA79925A8177700F52BD3 /* PokerAppPokerRuleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerAppPokerRuleTest.swift; sourceTree = "<group>"; };
 		5DAFA79D25A8441300F52BD3 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		5DAFA7A425A88F2100F52BD3 /* PokerAppPlayTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerAppPlayTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				5D6F7BDA25A5A5E100BCE98D /* Info.plist */,
 				5DAFA77225A6C71C00F52BD3 /* PokerAppDeckTest.swift */,
 				5DAFA79925A8177700F52BD3 /* PokerAppPokerRuleTest.swift */,
+				5DAFA7A425A88F2100F52BD3 /* PokerAppPlayTest.swift */,
 			);
 			path = PokerAppCardTest;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				5DAFA79125A711FD00F52BD3 /* PokerAppGameTest.swift in Sources */,
 				5DAFA7A125A8451000F52BD3 /* Player.swift in Sources */,
 				5DAFA79A25A8177700F52BD3 /* PokerAppPokerRuleTest.swift in Sources */,
+				5DAFA7A525A88F2100F52BD3 /* PokerAppPlayTest.swift in Sources */,
 				5D6F7C0F25A69BFB00BCE98D /* Card.swift in Sources */,
 				5DAFA77325A6C71C00F52BD3 /* PokerAppDeckTest.swift in Sources */,
 			);

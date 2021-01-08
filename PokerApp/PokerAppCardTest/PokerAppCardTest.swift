@@ -8,14 +8,6 @@ import XCTest
 
 class PokerAppCardTest: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-    
     func test카드숫자범위_확인() throws {
         let randomInt = Int.random(in: 1...13)
         let card = try Card(rank: randomInt, suit: Card.Suit.Clubs)

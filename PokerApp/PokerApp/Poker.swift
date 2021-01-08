@@ -19,6 +19,7 @@ class PokerPlay: Poker {
     private(set) public var users: [Player]
     let dealer: Dealer
     let initialNumOfCards: Int
+    let numOfUser: Int
     
     init(type: PokerPlay.GameType = .five, numOfUser: Int) throws {
         
@@ -27,14 +28,15 @@ class PokerPlay: Poker {
         }
         
         self.type = type
-        self.dealer = Dealer()
+        self.dealer = Dealer(deck: Deck())
         self.users = [Player]()
         self.initialNumOfCards = self.dealer.deck.count
+        self.numOfUser = numOfUser
         super.init()
 
         self.dealer.getCards(cards: try self.handOut())
-        for _ in 0..<numOfUser {
-            let user = Player()
+        for i in 0..<numOfUser {
+            let user = Player(index: i+1)
             user.getCards(cards: try self.handOut())
             self.users.append(user)
         }
@@ -47,6 +49,21 @@ class PokerPlay: Poker {
             cards.append(try self.dealer.deck.removeOne())
         }
         return cards
+    }
+    
+    func whoIsWinner() {
+        var gamePlayer: [Playable] = [Playable]()
+        for i in 0..<self.numOfUser {
+            self.users[i].setScore(score: Poker.calculateScore(of: self.users[i]))
+            gamePlayer.append(self.users[i])
+        }
+        self.dealer.setScore(score: Poker.calculateScore(of: self.dealer))
+        gamePlayer.append(self.dealer)
+        if let winner: Playable = gamePlayer.max(by: {$0.score > $1.score}) {
+            for i in 0...self.numOfUser {
+                print("\(gamePlayer[i].playerName) \(gamePlayer[i].cards) \(gamePlayer[i].pid == winner.pid ? "= Winner" : "")")
+            }
+        }
     }
     
 }
@@ -186,5 +203,6 @@ class Poker {
         }
         return score
     }
+    
     
 }
