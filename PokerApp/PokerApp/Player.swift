@@ -7,7 +7,10 @@
 
 import Foundation
 
-class Playable {
+class Playable: Equatable {
+    public static func == (lhs: Playable, rhs: Playable) -> Bool {
+        return lhs.pid == rhs.pid
+    }
     private(set) var playerName: String
     private(set) var pid: String
     private(set) var cards: [Card]

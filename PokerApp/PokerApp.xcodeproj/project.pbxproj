@@ -21,6 +21,8 @@
 		5DAFA79E25A8441300F52BD3 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAFA79D25A8441300F52BD3 /* Player.swift */; };
 		5DAFA7A125A8451000F52BD3 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAFA79D25A8441300F52BD3 /* Player.swift */; };
 		5DAFA7A525A88F2100F52BD3 /* PokerAppPlayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAFA7A425A88F2100F52BD3 /* PokerAppPlayTest.swift */; };
+		5DAFA7A925A89AA100F52BD3 /* PokerPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAFA7A825A89AA100F52BD3 /* PokerPlay.swift */; };
+		5DAFA7AD25A89AB800F52BD3 /* PokerPlayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DAFA7AC25A89AB800F52BD3 /* PokerPlayPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +51,8 @@
 		5DAFA79925A8177700F52BD3 /* PokerAppPokerRuleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerAppPokerRuleTest.swift; sourceTree = "<group>"; };
 		5DAFA79D25A8441300F52BD3 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		5DAFA7A425A88F2100F52BD3 /* PokerAppPlayTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerAppPlayTest.swift; sourceTree = "<group>"; };
+		5DAFA7A825A89AA100F52BD3 /* PokerPlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerPlay.swift; sourceTree = "<group>"; };
+		5DAFA7AC25A89AB800F52BD3 /* PokerPlayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerPlayPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 				5D6F7C0B25A69BE800BCE98D /* Card.swift */,
 				5DAFA76E25A6A43400F52BD3 /* Deck.swift */,
 				5DAFA79D25A8441300F52BD3 /* Player.swift */,
+				5DAFA7A825A89AA100F52BD3 /* PokerPlay.swift */,
+				5DAFA7AC25A89AB800F52BD3 /* PokerPlayPresenter.swift */,
 			);
 			path = PokerApp;
 			sourceTree = "<group>";
@@ -205,6 +211,8 @@
 				5D6F7C0C25A69BE800BCE98D /* Card.swift in Sources */,
 				5DAFA79E25A8441300F52BD3 /* Player.swift in Sources */,
 				5DAFA78D25A7119E00F52BD3 /* Poker.swift in Sources */,
+				5DAFA7AD25A89AB800F52BD3 /* PokerPlayPresenter.swift in Sources */,
+				5DAFA7A925A89AA100F52BD3 /* PokerPlay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
